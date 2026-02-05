@@ -71,17 +71,17 @@ void insertAtPosition(int value, int position){
 
 int searchValue(int data){
     Node* temp = SinglyLinkedList;
-    int currentPosition = 1;
-    while(temp->data != data){
-        if(temp-> next == NULL){
-            return -1; // Not found
+    int pos = 1;
+
+    while(temp != NULL){
+        if(temp->data == data){
+            cout << "Element found at position: " << pos << endl;
+            return pos;
         }
-        temp = temp-> next;
-        currentPosition++;   
+        temp = temp->next;
+        pos++;
     }
-    cout << "Element found at position: " << currentPosition << endl;
-    return currentPosition; // Return position of found element
-    
+    return -1;
 }
 
 int deleteAtStart(){
